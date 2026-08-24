@@ -7,10 +7,6 @@ namespace AutoCheck.ConsoleApp.Models
 
     public ItemVistoria(string nome, string status)
     {
-      if (status.ToLower() != "bom" && status.ToLower() != "regular" && status.ToLower() != "ruim")
-      {
-        Console.WriteLine("Status inválido. Utilize apenas: 'Bom', 'Regular' ou 'Ruim'.");
-      }
       Nome = nome;
       Status = status;
     }
@@ -19,15 +15,15 @@ namespace AutoCheck.ConsoleApp.Models
     {
       int pontuacao = 0;
 
-      if (Status.ToLower() == "bom")
+      if (Status.Equals("bom", StringComparison.CurrentCultureIgnoreCase))
       {
         pontuacao = 10;
       }
-      else if (Status.ToLower() == "regular")
+      else if (Status.Equals("regular", StringComparison.CurrentCultureIgnoreCase))
       {
         pontuacao = 5;
       }
-      else if (Status.ToLower() == "ruim")
+      else if (Status.Equals("ruim", StringComparison.CurrentCultureIgnoreCase))
       {
         pontuacao = 0;
       }
