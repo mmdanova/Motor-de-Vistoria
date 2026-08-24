@@ -19,7 +19,7 @@ namespace AutoCheck.ConsoleApp.Models
 
         public void AdicionarItemVistoriado(string nome, string status)
         {
-            
+            this.VistoriaRealizada.Add(new ItemVistoria(nome, status));
         }
 
         public virtual List<string> ObterChecklistObrigatorio()
